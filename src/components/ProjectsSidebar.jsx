@@ -1,13 +1,13 @@
 export default function ProjectsSidebar() {
     return (
-            <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-br-xl">
-                <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">Projects</h2>
-                <div>
-                    <button className="px-4 py-2 text-xs md:text-base bg-stone-700 text-stone-400 rounded-md hover:bg-stone-600 hover:text-stone-100">
-                        + Add Project
-                    </button>
-                </div>
-                <ul></ul>
-            </aside>
+        <aside className="w-1/3 rounded-br-xl bg-stone-900 px-8 py-16 text-stone-50 md:w-72">
+            <h2 className="mb-8 font-bold uppercase text-stone-200 md:text-xl">Project</h2>
+            <div>
+                <button className="rounded-md bg-stone-700 px-4 py-2 text-xs text-stone-400 hover:bg-stone-600 hover:text-stone-100 md:text-base">
+                    + Add Project
+                </button>
+            </div>
+            <ul></ul>
+        </aside>
     );
 }
