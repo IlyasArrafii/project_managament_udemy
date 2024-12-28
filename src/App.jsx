@@ -4,7 +4,7 @@ import NoProjectedSelected from './components/NoProjectedSelected.jsx';
 import ProjectsSidebar from './components/ProjectsSidebar.jsx';
 
 function App() {
-    const [project, setProject] = useState({
+    const [projectState, setProject] = useState({
         selectedProjectId: undefined,
         projects: [],
     });
@@ -18,14 +18,30 @@ function App() {
         });
     }
 
+    function handleAddProject(projectData) {
+        setProject((prevState) => {
+            const newProject = {
+                ...projectData,
+                id: Math.random(),
+            };
+
+            return {
+                ...prevState,
+                projects: [...prevState.projects, newProject],
+            };
+        });
+    }
+
+    console.log(projectState);
+
     let content;
 
-    if (project.selectedProjectId === null) {
-        content = <NewProject />;
-    } else if (project.selectedProjectId === undefined) {
+    if (projectState.selectedProjectId === null) {
+        content = <NewProject onAdd={handleAddProject} />;
+    } else if (projectState.selectedProjectId === undefined) {
         content = <NoProjectedSelected onStartAddProject={handleStartAddProject} />;
     }
-    
+
     return (
         <main className="flex h-screen gap-8">
             <ProjectsSidebar onStartAddProject={handleStartAddProject} />
