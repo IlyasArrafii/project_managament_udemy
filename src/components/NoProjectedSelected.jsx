@@ -7,7 +7,7 @@ export default function NoProjectedSelected({ onStartAddProject }) {
             <img src={noProjectImage} alt="Empty List" className="mx-auto w-16 object-contain" />
             <h2 className="my-4 text-xl font-bold text-black">No Project Selected</h2>
             <p className="mb-4 text-black">Select project or get started with a new one</p>
-            <p>
+            <p className='mt-8'>
                 <Button onClick={onStartAddProject}>Create New Project</Button>
             </p>
         </div>
