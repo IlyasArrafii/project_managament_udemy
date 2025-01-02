@@ -1,6 +1,6 @@
 import Button from './Button.jsx';
 
-export default function SelectedProject({ project }) {
+export default function SelectedProject({ project, onDelete }) {
     const formatDate = new Date(project.dueDate).toLocaleDateString('id-ID', {
         year: 'numeric',
         month: 'long',
@@ -12,7 +12,7 @@ export default function SelectedProject({ project }) {
             <header className="mb-4 border-b-2 border-stone-300 pb-4">
                 <div className="flex items-center justify-between">
                     <h1 className="mb-2 text-2xl font-bold text-black">{project.title}</h1>
-                    <Button className="rounded-md bg-red-500 px-4 py-2 hover:bg-red-600 text-white">Delete</Button>
+                    <Button className="rounded-md bg-red-500 px-4 py-2 hover:bg-red-600 text-white" onClick={onDelete}>Delete</Button>
                 </div>
                 <p className="mb-4 text-black">{formatDate}</p>
                 <p className="whitespace-pre-wrap text-black">{project.description}</p>
